@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <title>Parit</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        background-color: #b5eaffff;
+        color: #006187ff;
+        font-family: Sans-Serif;
+        align-items: center;
+      }
+    </style>
+     <script>
+      function redirecionar() {
+    const campo = document.getElementById('busca');
+    const erro = document.getElementById('mensagem-erro');
+    const valor = campo.value.trim();
+
+    if (valor === "") {
+        // 1. Mostra a mensagem e a borda
+        erro.textContent = "Digite algo, não deixe em branco";
+        campo.style.borderColor = "blue";
+
+        // 2. Cria o "cronômetro" para sumir daqui a 3 segundos (3000ms)
+        setTimeout(() => {
+            erro.textContent = "";
+            campo.style.borderColor = "";
+        }, 3000); 
+
+        return; // Para a execução aqui
+    }
+
+    // Se tiver texto, segue o código normal de busca...
+    window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(valor);
+}
+
+
+     </script>
+  </head>
+  <body>
+    <h1>😜 Parit 😄</h1>
+    <p>Bem vindo ao parit, Open Source do LineGo, pesquise algo!</p>
+
+    <input type="url" placeholder="Digite um Url ou Pesquise">
+    <button onclick="redirecionar()>Ir</button>
+  </body>
+</html>
